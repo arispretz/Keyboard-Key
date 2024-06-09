@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Keyboard Key</title>
+</head>
+
+<body>
+
+	<script>
+const bigDiv = document.createElement('div');
+bigDiv.setAttribute('class', 'wrapper');
+bigDiv.style.textAlign = 'center';
+bigDiv.style.display = 'flex';
+bigDiv.style.justifyContent = 'center';
+bigDiv.style.alignItems = 'center'; 
+bigDiv.style.alignSelf = 'center';
+bigDiv.style.marginTop = '200px';
+bigDiv.style.marginLeft = '140px';
+bigDiv.style.paddingBottom = '50px';
+bigDiv.style.border = '5px solid gold';
+bigDiv.style.width = '1000px';
+bigDiv.style.backgroundColor = 'sand';
+document.body.appendChild(bigDiv);
+
+const wrapper = document.querySelector('.wrapper');
+
+const title = document.createElement('h1');
+title.textContent = 'Press any keyboard key';
+title.style.width = '360px';
+title.style.height = '30px';
+title.style.color = 'green';
+title.style.textAlign = 'center';
+title.style.borderColor = 'gold';
+title.style.borderWidth = '10px';
+title.style.paddingTop = '20px';
+wrapper.appendChild(title);
+
+const keyPressed = document.createElement('h2');
+keyPressed.style.width = '360px';
+keyPressed.style.height = '30px';
+keyPressed.style.color = 'magenta';
+keyPressed.style.textAlign = 'center';
+keyPressed.style.fontSize = '36px';
+keyPressed.style.display = 'none'; 
+keyPressed.style.marginBottom = '10px'; 
+wrapper.appendChild(keyPressed);
+
+const codeToShow = document.createElement('h3');
+codeToShow.style.width = '360px';
+codeToShow.style.height = '30px';
+codeToShow.style.textAlign = 'center';
+codeToShow.style.justifyContent = 'center';
+codeToShow.style.fontSize = '50px'; 
+codeToShow.style.color = 'blue';
+codeToShow.style.display = 'none'; 
+codeToShow.style.marginLeft = '470px';
+document.body.appendChild(codeToShow);
+
+document.body.addEventListener('keydown', e => {
+    title.style.display = 'none'; 
+    keyPressed.textContent = 'You pressed: ';
+    keyPressed.style.display = 'block'; 
+    const keyText = document.createElement('span');
+    keyText.textContent = e.key;
+	keyText.style.fontSize = '42px';
+    keyText.style.color = 'purple'; // Color rojo para la tecla presionada
+    keyPressed.appendChild(keyText);
+    
+    codeToShow.textContent = e.keyCode;
+    codeToShow.style.display = 'block'; // Mostrar codeToShow
+});
+
+	</script>
+
+</body>
+
+</html>
